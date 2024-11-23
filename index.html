@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meowth - Korepetycje z Matematyki</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-image: url('strona.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 20px;
+            position: absolute;
+            top: 60%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+        }
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            width: 200px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #000000;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #4c4c4c;
+            transform: translateY(-5px);
+        }
+        .social-icons {
+            position: absolute;
+            bottom: 10%; /* Ikony na dole */
+            left: 70%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px; /* Odstęp między ikonami */
+        }
+        .social-icons a {
+            font-size: 24px; /* Rozmiar ikon */
+            color: #000; /* Kolor ikon */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #b00000; /* Kolor po najechaniu */
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons-container">
+        <a href="#o-nas" class="button">O nas</a>
+        <a href="#zajecia" class="button">Zajęcia</a>
+        <a href="#kursy-maturalne" class="button">Kursy maturalne</a>
+        <a href="#cennik" class="button">Cennik</a>
+        <a href="#zarezerwuj-online" class="button">Zarezerwuj online</a>
+        <a href="#zapros-znajomych" class="button">Zapros znajomych</a>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+    </div>
+</body>
+</html>
