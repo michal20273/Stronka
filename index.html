@@ -23,7 +23,7 @@
         .buttons-container {
             display: grid;
             grid-template-columns: repeat(2, auto);
-            gap: 20px;
+            gap: 2vw; /* Odstępy między guzikami zależne od szerokości okna */
             position: absolute;
             top: 60%;
             left: 70%;
@@ -33,11 +33,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 15px 20px;
-            width: 200px;
+            width: 15vw; /* Szerokość guzika zależna od szerokości okna */
+            max-width: 250px; /* Maksymalna szerokość guzika */
+            min-width: 120px; /* Minimalna szerokość guzika */
+            padding: 1.5vw; /* Wewnętrzne odstępy skalujące się z oknem */
             text-align: center;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 1.5vw; /* Rozmiar tekstu skalowany względem szerokości okna */
             font-weight: bold;
             color: #ffffff;
             background-color: #000000;
@@ -51,20 +53,38 @@
         }
         .social-icons {
             position: absolute;
-            bottom: 10%; /* Ikony na dole */
+            bottom: 10%;
             left: 70%;
             transform: translateX(-50%);
             display: flex;
-            gap: 20px; /* Odstęp między ikonami */
+            gap: 2vw; /* Odstępy między ikonami zależne od szerokości okna */
         }
         .social-icons a {
-            font-size: 24px; /* Rozmiar ikon */
+            font-size: 2vw; /* Rozmiar ikon skalowany względem szerokości okna */
             color: #000; /* Kolor ikon */
             text-decoration: none;
             transition: color 0.3s ease;
         }
         .social-icons a:hover {
             color: #b00000; /* Kolor po najechaniu */
+        }
+
+        /* Media queries dla bardzo małych ekranów */
+        @media (max-width: 600px) {
+            .buttons-container {
+                grid-template-columns: 1fr; /* Jeden guzik na wiersz na małych ekranach */
+                gap: 10px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .button {
+                width: 70%; /* Guziki zajmują większą część ekranu */
+                font-size: 4vw; /* Większy tekst na małych ekranach */
+            }
+            .social-icons a {
+                font-size: 5vw; /* Większe ikony na małych ekranach */
+            }
         }
     </style>
 </head>
