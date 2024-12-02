@@ -28,8 +28,34 @@
                 background-image: url('o nas male.png'); /* Grafika dla małego ekranu */
             }
         }
+
+        /* Styl przycisku powrotu */
+        .back-button {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 20px;
+        }
+        .back-button:hover {
+            background-color: #4c4c4c;
+            transform: translateY(-3px);
+        }
     </style>
 </head>
 <body>
+    <a href="index.html" class="back-button" aria-label="Powrót do strony głównej">
+        &#8592;
+    </a>
 </body>
 </html>
