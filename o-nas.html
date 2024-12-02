@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nas - Meowth (Duży ekran)</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('o nas.png'); /* Large screen graphic */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+<script>
+        function checkScreenSize() {
+            const isSmallScreen = window.innerWidth < 768;
+            const currentURL = window.location.href;
+            
+            if (isSmallScreen && !currentURL.includes("o-nas-small.html")) {
+                window.location.href = "o-nas-small.html";
+            } else if (!isSmallScreen && currentURL.includes("o-nas-small.html")) {
+                window.location.href = "o-nas.html";
+            }
+        }
+        window.onload = checkScreenSize;
+        window.onresize = checkScreenSize;
+    </script>
+</head>
+<body>
+</body>
+</html>
