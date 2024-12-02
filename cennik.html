@@ -1,36 +1,34 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cennik - Meowth (Duży ekran)</title>
+    <title>Cennik - Meowth</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            background-image: url('Cennik.png'); /* Large screen graphic */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
-    </style>
-    <script>
-        function checkScreenSize() {
-            const isSmallScreen = window.innerWidth < 768;
-            const currentURL = window.location.href;
-            
-            if (isSmallScreen && !currentURL.includes("cennik-small.html")) {
-                window.location.href = "cennik-small.html";
-            } else if (!isSmallScreen && currentURL.includes("cennik-small.html")) {
-                window.location.href = "cennik.html";
+
+        /* Styl dla dużych ekranów */
+        @media (min-width: 768px) {
+            body {
+                background-image: url('Cennik.png'); /* Grafika dla dużego ekranu */
             }
         }
-        window.onload = checkScreenSize;
-        window.onresize = checkScreenSize;
-    </script>
+
+        /* Styl dla małych ekranów */
+        @media (max-width: 767px) {
+            body {
+                background-image: url('Cennik-small.png'); /* Grafika dla małego ekranu */
+            }
+        }
+    </style>
 </head>
 <body>
 </body>
