@@ -15,7 +15,7 @@
             font-family: Arial, sans-serif;
         }
         body {
-            background-image: url('new-background.png'); /* Ścieżka do obrazu */
+            background-image: url('new-background.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -25,7 +25,7 @@
             grid-template-columns: repeat(2, auto);
             gap: 15px;
             position: absolute;
-            bottom: 10%; /* Guziki przesunięte niżej */
+            bottom: 10%;
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
@@ -34,13 +34,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 35vw; /* Guziki zmniejszone */
-            max-width: 180px; /* Maksymalna szerokość zmniejszona */
-            min-width: 90px; /* Minimalna szerokość zmniejszona */
-            padding: 8px; /* Mniejsze wewnętrzne odstępy */
+            width: 35vw;
+            max-width: 180px;
+            min-width: 90px;
+            padding: 8px;
             text-align: center;
             text-decoration: none;
-            font-size: 14px; /* Mniejszy rozmiar czcionki */
+            font-size: 14px;
             font-weight: bold;
             color: #ffffff;
             background-color: #000000;
@@ -54,22 +54,36 @@
         }
         .social-icons {
             position: absolute;
-            bottom: 3%; /* Ikony również przesunięte niżej */
+            bottom: 3%;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             gap: 15px;
         }
         .social-icons a {
-            font-size: 22px; /* Ikony społecznościowe zmniejszone */
-            color: #000; /* Kolor ikon */
+            font-size: 22px;
+            color: #000;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         .social-icons a:hover {
-            color: #b00000; /* Kolor po najechaniu */
+            color: #b00000;
         }
     </style>
+    <script>
+        function checkScreenSize() {
+            const isSmallScreen = window.innerWidth < 768;
+            const currentURL = window.location.href;
+            
+            if (isSmallScreen && !currentURL.includes("new-background-adjusted.html")) {
+                window.location.href = "new-background-adjusted.html";
+            } else if (!isSmallScreen && currentURL.includes("new-background-adjusted.html")) {
+                window.location.href = "index.html";
+            }
+        }
+        window.onload = checkScreenSize;
+        window.onresize = checkScreenSize;
+    </script>
 </head>
 <body>
     <div class="buttons-container">

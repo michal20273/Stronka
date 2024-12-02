@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -23,7 +24,7 @@
         .buttons-container {
             display: grid;
             grid-template-columns: repeat(2, auto);
-            gap: 2vw; /* Odstępy między guzikami zależne od szerokości okna */
+            gap: 2vw;
             position: absolute;
             top: 60%;
             left: 70%;
@@ -33,13 +34,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 15vw; /* Szerokość guzika zależna od szerokości okna */
-            max-width: 250px; /* Maksymalna szerokość guzika */
-            min-width: 120px; /* Minimalna szerokość guzika */
-            padding: 1.5vw; /* Wewnętrzne odstępy skalujące się z oknem */
+            width: 15vw;
+            max-width: 250px;
+            min-width: 120px;
+            padding: 1.5vw;
             text-align: center;
             text-decoration: none;
-            font-size: 1.5vw; /* Rozmiar tekstu skalowany względem szerokości okna */
+            font-size: 1.5vw;
             font-weight: bold;
             color: #ffffff;
             background-color: #000000;
@@ -57,49 +58,46 @@
             left: 70%;
             transform: translateX(-50%);
             display: flex;
-            gap: 2vw; /* Odstępy między ikonami zależne od szerokości okna */
+            gap: 2vw;
         }
         .social-icons a {
-            font-size: 2vw; /* Rozmiar ikon skalowany względem szerokości okna */
-            color: #000; /* Kolor ikon */
+            font-size: 2vw;
+            color: #000;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         .social-icons a:hover {
-            color: #b00000; /* Kolor po najechaniu */
+            color: #b00000;
         }
-
-        /* Media queries dla bardzo małych ekranów */
         @media (max-width: 600px) {
             .buttons-container {
-                grid-template-columns: 1fr; /* Jeden guzik na wiersz na małych ekranach */
+                grid-template-columns: 1fr;
                 gap: 10px;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
             .button {
-                width: 70%; /* Guziki zajmują większą część ekranu */
-                font-size: 4vw; /* Większy tekst na małych ekranach */
+                width: 70%;
+                font-size: 4vw;
             }
             .social-icons a {
-                font-size: 5vw; /* Większe ikony na małych ekranach */
+                font-size: 5vw;
             }
         }
     </style>
     <script>
-        // Funkcja sprawdzająca szerokość ekranu i przekierowująca do wersji mobilnej
         function checkScreenSize() {
-            if (window.innerWidth < 768) {
-                // Przekierowanie do mobilnej wersji strony
+            const isSmallScreen = window.innerWidth < 768;
+            const currentURL = window.location.href;
+            
+            if (isSmallScreen && !currentURL.includes("new-background-adjusted.html")) {
                 window.location.href = "new-background-adjusted.html";
+            } else if (!isSmallScreen && currentURL.includes("new-background-adjusted.html")) {
+                window.location.href = "index.html";
             }
         }
-
-        // Wywołanie funkcji podczas ładowania strony
         window.onload = checkScreenSize;
-
-        // Ponowne sprawdzenie podczas zmiany rozmiaru okna
         window.onresize = checkScreenSize;
     </script>
 </head>
