@@ -87,6 +87,21 @@
             }
         }
     </style>
+    <script>
+        // Funkcja sprawdzająca szerokość ekranu i przekierowująca do wersji mobilnej
+        function checkScreenSize() {
+            if (window.innerWidth < 768) {
+                // Przekierowanie do mobilnej wersji strony
+                window.location.href = "new-background-adjusted.html";
+            }
+        }
+
+        // Wywołanie funkcji podczas ładowania strony
+        window.onload = checkScreenSize;
+
+        // Ponowne sprawdzenie podczas zmiany rozmiaru okna
+        window.onresize = checkScreenSize;
+    </script>
 </head>
 <body>
     <div class="buttons-container">
